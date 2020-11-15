@@ -8,18 +8,14 @@ module.exports = {
     contentBase: appPath.OUTPUT,
     compress: true,
     port: 3000,
-    hot: true
+    watchContentBase: true,
+    // hot: true,
   },
   module: {
     rules: [
       {
         test: /\.s?css$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-          'postcss-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
       },
     ],
   },
