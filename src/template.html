@@ -1,141 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Retaurant</title>
-  </head>
-  <body class="grid bg-gray-200">
-    <header class="w-full h-16 col-span-2 bg-gray-200">
-      <div class="flex items-center justify-center w-64 h-16 bg-gray-200">
-        <h1 class="text-2xl font-light leading-tight text-gray-700">
-          Burgers
-        </h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retaurant</title>
+</head>
+
+<body class="grid grid-layout bg-gray-200">
+  <header class="w-full col-start-2 h-16 bg-gray-200">
+    <div class="flex items-center justify-center h-16 bg-gray-200">
+      <h1 class="text-2xl font-light leading-tight text-gray-700">Heading Burgers</h1>
+    </div>
+  </header>
+
+  <aside
+    class="row-span-full top-0 box-border flex flex-col justify-between sticky h-screen min-h-screen bg-yellow-200">
+
+    <div class="flex items-center justify-center h-16 bg-gray-200">
+      <h1 class="text-2xl font-light leading-tight text-gray-700">Burgers</h1>
+    </div>
+    <div class="flex flex-col justify-between h-screen">
+      <div class="flex justify-center mt-2 align-middle border-gray-100">
+        <h2 id="all-projects" class="mb-8 text-xl font-light text-center text-gray-700">
+          Category
+        </h2>
+
       </div>
-    </header>
- 
-    <aside class="flex flex-col justify-between w-64 h-screen min-h-full bg-gray-200">
-        <div class="flex justify-center mt-2 align-middle border-gray-100">
-          <h2
-            id="all-projects"
-            class="mb-8 text-xl font-light text-center text-gray-700"
-          >
-            Category
-          </h2>
-        </div>
-        <div class="flex justify-center align-center">
-          <ul class="flex flex-col items-start gap-y-8" id="sidebarProjects">
-            <li>
-              <a href="#" class="block w-8 h-8 bg-transparent bg-cover bg-burger"></a>
+      <div class="flex justify-center align-center">
+        <ul class="flex flex-col items-start gap-y-16" id="sidebarProjects">
+          <li>
+            <a href="#" class="block w-8 h-8 bg-transparent bg-cover bg-burger"></a>
           </li>
-            <li>
-              <a href="#" class="block w-8 h-8 bg-transparent bg-cover bg-pizza"></a>
+          <li>
+            <a href="#" class="block w-8 h-8 bg-transparent bg-cover bg-pizza"></a>
           </li>
-            <li>
-              <a href="#" class="block w-8 h-8 bg-transparent bg-cover bg-cake"></a>
+          <li>
+            <a href="#" class="block w-8 h-8 bg-transparent bg-cover bg-cake"></a>
           </li>
-          </ul>
-        </div>
-        <div class="div">
-          <span class="text-sm text-gray-700">Preference</span>
-        </div>
-      </section>
-    </aside>
-    <main id="main" class="">
+        </ul>
+      </div>
+      <div class="div pb-12">
+        <span class="text-sm text-center text-gray-700">Preference</span>
+      </div>
+    </div>
+  </aside>
+  <main id="main" class="">
+    <!--
       <div id="modalStation"></div>
       <div id="content flex flex-col flex-wrap">
         <h2 class="mb-4 text-xl font-hairline text-gray-700">Burgers</h2>
         <div class="flex flex-row flex-wrap cards">
-          <div class="flex flex-col w-64 max-w-xs p-4 m-2 bg-gray-100 w- gap-y-4">
-            <span class="flex justify-end text-teal-500">
-              4Br
-            </span>
+          <div
+            class="flex flex-col w-64 max-w-xs p-4 m-2 bg-gray-100 w- gap-y-4"
+          >
+            <span class="flex justify-end text-teal-500"> 4Br </span>
             <div class="self-center block w-20 h-20 bg-cover bg-burger"></div>
             <div class="flex flex-row items-center justify-between">
               <div class="">
                 <p class="mb-2 text-sm text-gray-700">
-              sed risus ultricies tristique nulla aliquet enim tortor at auctor urna
-            </p>
-            <span class="flex justify-start text-teal-500">
-              4Br
-            </span>
+                  sed risus ultricies tristique nulla aliquet enim tortor at
+                  auctor urna
+                </p>
+                <span class="flex justify-start text-teal-500"> 4Br </span>
               </div>
-              <button class="flex items-center justify-center w-10 h-10 text-gray-100 bg-yellow-500 rounded-full h-min-10 min-w-10">+</button>
+              <button
+                class="flex items-center justify-center w-10 h-10 text-gray-100 bg-yellow-500 rounded-full h-min-10 min-w-10"
+              >
+                +
+              </button>
             </div>
           </div>
 
-          <div class="flex flex-col w-64 max-w-xs p-4 m-2 bg-gray-100 w- gap-y-4">
-            <span class="flex justify-end text-teal-500">
-              4Br
-            </span>
+          <div
+            class="flex flex-col w-64 max-w-xs p-4 m-2 bg-gray-100 w- gap-y-4"
+          >
+            <span class="flex justify-end text-teal-500"> 4Br </span>
             <div class="self-center block w-20 h-20 bg-cover bg-burger"></div>
             <div class="flex flex-row items-center justify-between">
               <div class="">
                 <p class="mb-2 text-sm text-gray-700">
-              sed risus ultricies tristique nulla aliquet enim tortor at auctor urna
-            </p>
-            <span class="flex justify-start text-teal-500">
-              4Br
-            </span>
+                  sed risus ultricies tristique nulla aliquet enim tortor at
+                  auctor urna
+                </p>
+                <span class="flex justify-start text-teal-500"> 4Br </span>
               </div>
-              <button class="flex items-center justify-center w-10 h-10 text-gray-100 bg-yellow-500 rounded-full h-min-10 min-w-10">+</button>
+              <button
+                class="flex items-center justify-center w-10 h-10 text-gray-100 bg-yellow-500 rounded-full h-min-10 min-w-10"
+              >
+                +
+              </button>
             </div>
           </div>
 
-          <div class="flex flex-col w-64 max-w-xs p-4 m-2 bg-gray-100 w- gap-y-4">
-            <span class="flex justify-end text-teal-500">
-              4Br
-            </span>
+          <div
+            class="flex flex-col w-64 max-w-xs p-4 m-2 bg-gray-100 w- gap-y-4"
+          >
+            <span class="flex justify-end text-teal-500"> 4Br </span>
             <div class="self-center block w-20 h-20 bg-cover bg-burger"></div>
             <div class="flex flex-row items-center justify-between">
               <div class="">
                 <p class="mb-2 text-sm text-gray-700">
-              sed risus ultricies tristique nulla aliquet enim tortor at auctor urna
-            </p>
-            <span class="flex justify-start text-teal-500">
-              4Br
-            </span>
+                  sed risus ultricies tristique nulla aliquet enim tortor at
+                  auctor urna
+                </p>
+                <span class="flex justify-start text-teal-500"> 4Br </span>
               </div>
-              <button class="flex items-center justify-center w-10 h-10 text-gray-100 bg-yellow-500 rounded-full h-min-10 min-w-10">+</button>
+              <button
+                class="flex items-center justify-center w-10 h-10 text-gray-100 bg-yellow-500 rounded-full h-min-10 min-w-10"
+              >
+                +
+              </button>
             </div>
           </div>
 
-          <div class="flex flex-col w-64 max-w-xs p-4 m-2 bg-gray-100 w- gap-y-4">
-            <span class="flex justify-end text-teal-500">
-              4Br
-            </span>
+          <div
+            class="flex flex-col w-64 max-w-xs p-4 m-2 bg-gray-100 w- gap-y-4"
+          >
+            <span class="flex justify-end text-teal-500"> 4Br </span>
             <div class="self-center block w-20 h-20 bg-cover bg-burger"></div>
             <div class="flex flex-row items-center justify-between">
               <div class="">
                 <p class="mb-2 text-sm text-gray-700">
-              sed risus ultricies tristique nulla aliquet enim tortor at auctor urna
-            </p>
-            <span class="flex justify-start text-teal-500">
-              4Br
-            </span>
+                  sed risus ultricies tristique nulla aliquet enim tortor at
+                  auctor urna
+                </p>
+                <span class="flex justify-start text-teal-500"> 4Br </span>
               </div>
-              <button class="flex items-center justify-center w-10 h-10 text-gray-100 bg-yellow-500 rounded-full h-min-10 min-w-10">+</button>
+              <button
+                class="flex items-center justify-center w-10 h-10 text-gray-100 bg-yellow-500 rounded-full h-min-10 min-w-10"
+              >
+                +
+              </button>
             </div>
           </div>
-          <div class="flex flex-col w-64 max-w-xs p-4 m-2 bg-gray-100 w- gap-y-4">
-            <span class="flex justify-end text-teal-500">
-              4Br
-            </span>
+          <div
+            class="flex flex-col w-64 max-w-xs p-4 m-2 bg-gray-100 w- gap-y-4"
+          >
+            <span class="flex justify-end text-teal-500"> 4Br </span>
             <div class="self-center block w-20 h-20 bg-cover bg-burger"></div>
             <div class="flex flex-row items-center justify-between">
               <div class="">
                 <p class="mb-2 text-sm text-gray-700">
-              sed risus ultricies tristique nulla aliquet enim tortor at auctor urna
-            </p>
-            <span class="flex justify-start text-teal-500">
-              4Br
-            </span>
+                  sed risus ultricies tristique nulla aliquet enim tortor at
+                  auctor urna
+                </p>
+                <span class="flex justify-start text-teal-500"> 4Br </span>
               </div>
-              <button class="flex items-center justify-center w-10 h-10 text-gray-100 bg-yellow-500 rounded-full h-min-10 min-w-10">+</button>
+              <button
+                class="flex items-center justify-center w-10 h-10 text-gray-100 bg-yellow-500 rounded-full h-min-10 min-w-10"
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </main>
-  </body>
+      -->
+  </main>
+</body>
+
 </html>

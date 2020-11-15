@@ -21,3 +21,8 @@
 .w-min-10 {
   min-height: 2.5em;
 }
+
+.grid-layout {
+  grid-template-rows: 10rem auto;
+  grid-template-columns: 5rem auto;
+}

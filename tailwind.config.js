@@ -1,8 +1,12 @@
 module.exports = {
+  future: {
+    // removeDeprecatedGapUtilities: true,
+    // purgeLayersByDefault: true,
+  },
   purge: ['./src/**/*.html'],
   theme: {
     extend: {
-      inset: {
+            inset: {
         10: '10%',
         5: '5%',
       },
@@ -10,4 +14,5 @@ module.exports = {
   },
   variants: {},
   plugins: [],
-};
+}
+
