@@ -9,7 +9,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|ico)/,
+        test: /\.(svg|png|jpe?g|ico)/,
         use: 'url-loader',
       },
       {
@@ -17,6 +17,16 @@ module.exports = {
         loader: 'html-loader',
         options: {
           minimize: true,
+        },
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
         },
       },
     ],
