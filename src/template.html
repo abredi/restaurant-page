@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Retaurant</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retaurant</title>
+  </head>
+  <body class="grid bg-gray-200">
+    <header class="w-full h-16 col-span-2 bg-gray-200">
+      <div class="flex items-center justify-center w-64 h-16 bg-gray-200">
+        <h1 class="text-2xl font-light leading-tight text-gray-700">
+          Burgers
+        </h1>
+      </div>
+    </header>
+ 
+    <aside class="flex flex-col justify-between w-64 h-screen min-h-full bg-gray-200">
+        <div class="flex justify-center mt-2 align-middle border-gray-100">
+          <h2
+            id="all-projects"
+            class="mb-8 text-xl font-light text-center text-gray-700"
+          >
+            Category
+          </h2>
+        </div>
+        <div class="flex justify-center align-center">
+          <ul class="flex flex-col items-start gap-y-8" id="sidebarProjects">
+            <li>
+              <a href="#" class="block w-8 h-8 bg-transparent bg-cover bg-burger"></a>
+          </li>
+            <li>
+              <a href="#" class="block w-8 h-8 bg-transparent bg-cover bg-pizza"></a>
+          </li>
+            <li>
+              <a href="#" class="block w-8 h-8 bg-transparent bg-cover bg-cake"></a>
+          </li>
+          </ul>
+        </div>
+        <div class="div">
+          <span class="text-sm text-gray-700">Preference</span>
+        </div>
+      </section>
+    </aside>
+    <main id="main" class="">
+      <div id="modalStation"></div>
+      <div id="content flex flex-col flex-wrap">
+      </div>
+    </main>
+  </body>
 </html>
