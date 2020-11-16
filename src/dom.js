@@ -18,18 +18,22 @@ const createElem = (elemName, classes = [], attrs = '') => {
 };
 
 const createCard = () => {
+  // flex flex-col w-64 max-w-xs p-4 m-2 bg-gray-100 w- gap-y-4
   const cardElem = createElem('div', ['flex', 'flex-col', 'w-64', 'max-w-xs', 'p-4', 'm-2', 'gap-y-4']);
   const cardPriceTagElem = createElem('span', ['flex', 'justify-end', 'text-teal-500']);
   const cardImgElem = createElem('i', ['self-center', 'w-20', 'h-20', 'bg-cover', 'bg-burger']);
-  const cardFooter = createElem('div', ['self-center', 'w-20', 'h-20', 'bg-cover', 'bg-burger']);
+  const cardFooter = createElem('div', ['flex', 'flex-row', 'items-center', 'justify-between']);
   const cardFooterText = createElem('div');
   const cardDesc = createElem('p', ['mb-2', 'text-sm', 'text-gray-700']);
-  const cardLocation = createElem('i', ['flex', 'justify-start', 'text-teal-500']);
-  const cardAddToCart = createElem('button', ['flex', 'text-xl', 'font-thin', 'items-center',
-    'outline-none', 'justify-center', 'w-10', 'h-10', 'text-gray-100', 'bg-yellow-500',
-    'rounded-full', 'h-min-10', 'min-w-10']);
+  const cardLocation = createElem('span', ['flex', 'justify-start', 'text-teal-500']);
+  const cardAddToCart = createElem('button', 
+  ['flex', 'text-xl', 'font-thin', 'items-center',
+    'outline-none', 'justify-center', 'w-10', 'h-10',
+    'text-gray-100', 'bg-yellow-500',
+    'rounded-full', 'min-w-10']);
   cardPriceTagElem.innerText = '4Br';
   cardAddToCart.innerText = '+';
+  cardLocation.innerText = 'Bole'
   cardDesc.innerText = `sed risus ultricies tristique nulla aliquet enim tortor at auctor urna`;
   cardFooterText.appendChild(cardDesc);
   cardFooterText.appendChild(cardLocation);
@@ -55,7 +59,7 @@ const createListItem = (bgImg = '', active = '') => {
     liCls = [...liCls, active];
   }
   const li = createElem('li', liCls);
-  const a = createElem('a', ['block', 'w-8', 'h-8', 'bg-transparent', bgImg]);
+  const a = createElem('a', ['block', 'bg-cover', 'w-8', 'h-8', 'bg-transparent', bgImg]);
   li.appendChild(a);
   return li;
 };
@@ -64,14 +68,14 @@ const createList = () => {
   const listWrapper = createElem('div', ['flex', 'justify-center', 'align-center']);
   const ul = createElem('ul', ['flex', 'flex-col', 'gap-y-16']);
   ['bg-pizza', 'bg-cake', 'bg-burger'].forEach((img, i) => {
-    const list = createListItem(img, i == 1 ? 'bg-gray-300' : '');
+    const list = createListItem(img, i == 1 ? 'bg-gray-400' : '');
     ul.appendChild(list);
   });
   listWrapper.appendChild(ul);
   return listWrapper;
 };
 
-const createSNHeading = () => {
+const createSNHeading = () => { 
   const heading = createElem('h1', ['mb-8', 'uppercase', 'text-xl', 'font-light', 'text-center', 'text-gray-700']);
   heading.innerText = 'Effoyy';
   return heading;
@@ -109,5 +113,4 @@ const createHeader = () => {
   return header;
 };
 
-export { createElem, createCard, createCards, createListItem, createList,
-  createSNFooter, createSidenav, createSelectedCategory, createHeader };
+export { createHeader, createSidenav, createSelectedCategory, createCards };
