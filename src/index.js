@@ -39,7 +39,16 @@ const displayContent = (activeData = [], activatedLink = '') => {
   contentElem.appendChild(createCards(activeData));
 };
 
+const cleanLinkHighlight = () => {
+  const prev = document.querySelectorAll('.bg-gray-400');
+  prev.forEach(elem => {
+    elem.classList.remove('bg-gray-400');
+  });
+};
+
 const navigate = (event) => {
+  cleanLinkHighlight();
+  event.target.parentElement.classList.toggle('bg-gray-400');
   const linkTo = event.target.getAttribute('linkto');
   clearContent();
   displayContent(contents[linkTo], linkTo);

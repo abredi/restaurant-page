@@ -23,7 +23,7 @@ const createElem = (elemName, classes = [], attrs = '', eventListner = null) => 
 const createCard = (cont) => {
   const cardElem = createElem('div', ['flex', 'flex-col', 'w-64', 'max-w-xs', 'p-4', 'm-2', 'gap-y-4']);
   const cardPriceTagElem = createElem('span', ['flex', 'justify-end', 'text-teal-500']);
-  const cardImgElem = createElem('img', ['self-center', 'w-20', 'h-20', 'bg-cover', 'bg-burger'],
+  const cardImgElem = createElem('img', ['self-center', 'w-20', 'h-20', 'bg-cover'],
    { src: cont.imgPath });
   const cardFooter = createElem('div', ['flex', 'flex-row', 'items-center', 'justify-between']);
   const cardFooterText = createElem('div');
@@ -56,13 +56,9 @@ const createCards = (activeData) => {
   return cardContainerElem;
 };
 
-const createListItem = (bgImg = '', active = '', eventListner) => {
-  let liCls = ['rounded-full', 'p-3'];
-  if (active !== '') {
-    liCls = [...liCls, active];
-  }
-  const li = createElem('li', liCls, '', eventListner);
-  const a = createElem('a', ['block', 'bg-cover', 'w-8', 'h-8', 'bg-transparent', bgImg], { linkTo: bgImg.substring(3) });
+const createListItem = (bgImg = '', eventListner) => {
+  const li = createElem('li', ['rounded-full', 'p-3'], '');
+  const a = createElem('a', ['block', 'bg-cover', 'w-8', 'h-8', 'bg-transparent', bgImg], { linkTo: bgImg.substring(3) }, eventListner);
   li.appendChild(a);
   return li;
 };
@@ -71,7 +67,7 @@ const createList = (eventListner) => {
   const listWrapper = createElem('div', ['flex', 'justify-center', 'align-center']);
   const ul = createElem('ul', ['flex', 'flex-col', 'gap-y-16']);
   ['bg-pizza', 'bg-cake', 'bg-burger'].forEach((img, i) => {
-    const list = createListItem(img, i == 1 ? 'bg-gray-400' : '', eventListner);
+    const list = createListItem(img, eventListner);
     ul.appendChild(list);
   });
   listWrapper.appendChild(ul);
