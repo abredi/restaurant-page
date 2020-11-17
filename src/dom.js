@@ -1,4 +1,4 @@
-const createElem = (elemName, classes = [], attrs = '') => {
+const createElem = (elemName, classes = [], attrs = '', eventListner = null) => {
   const elem = document.createElement(elemName);
   if (classes.length > 0) {
     elem.classList.add(...classes);
@@ -14,14 +14,17 @@ const createElem = (elemName, classes = [], attrs = '') => {
       }
     };
   };
+  if (eventListner) {
+    elem.addEventListener('click', eventListner);
+  }
   return elem;
 };
 
-const createCard = () => {
-  // flex flex-col w-64 max-w-xs p-4 m-2 bg-gray-100 w- gap-y-4
+const createCard = (cont) => {
   const cardElem = createElem('div', ['flex', 'flex-col', 'w-64', 'max-w-xs', 'p-4', 'm-2', 'gap-y-4']);
   const cardPriceTagElem = createElem('span', ['flex', 'justify-end', 'text-teal-500']);
-  const cardImgElem = createElem('i', ['self-center', 'w-20', 'h-20', 'bg-cover', 'bg-burger']);
+  const cardImgElem = createElem('img', ['self-center', 'w-20', 'h-20', 'bg-cover', 'bg-burger'],
+   { src: cont.imgPath });
   const cardFooter = createElem('div', ['flex', 'flex-row', 'items-center', 'justify-between']);
   const cardFooterText = createElem('div');
   const cardDesc = createElem('p', ['mb-2', 'text-sm', 'text-gray-700']);
@@ -31,10 +34,10 @@ const createCard = () => {
     'outline-none', 'justify-center', 'w-10', 'h-10',
     'text-gray-100', 'bg-yellow-500',
     'rounded-full', 'min-w-10']);
-  cardPriceTagElem.innerText = '4Br';
+  cardPriceTagElem.innerText = cont.price;
   cardAddToCart.innerText = '+';
-  cardLocation.innerText = 'Bole'
-  cardDesc.innerText = `sed risus ultricies tristique nulla aliquet enim tortor at auctor urna`;
+  cardLocation.innerText = cont.location;
+  cardDesc.innerText = cont.desc;
   cardFooterText.appendChild(cardDesc);
   cardFooterText.appendChild(cardLocation);
   cardFooter.appendChild(cardFooterText);
@@ -45,30 +48,30 @@ const createCard = () => {
   return cardElem;
 };
 
-const createCards = () => {
+const createCards = (activeData) => {
   const cardContainerElem = createElem('div', ['flex', 'flex-row', 'py-4', 'flex-wrap']);
-  for (let index = 0; index < 10; index++) {
-    cardContainerElem.appendChild(createCard());
+  for (let i = 0; i < 10; i++) {
+    cardContainerElem.appendChild(createCard(activeData[i]));
   };
   return cardContainerElem;
 };
 
-const createListItem = (bgImg = '', active = '') => {
+const createListItem = (bgImg = '', active = '', eventListner) => {
   let liCls = ['rounded-full', 'p-3'];
   if (active !== '') {
     liCls = [...liCls, active];
   }
-  const li = createElem('li', liCls);
-  const a = createElem('a', ['block', 'bg-cover', 'w-8', 'h-8', 'bg-transparent', bgImg]);
+  const li = createElem('li', liCls, '', eventListner);
+  const a = createElem('a', ['block', 'bg-cover', 'w-8', 'h-8', 'bg-transparent', bgImg], { linkTo: bgImg.substring(3) });
   li.appendChild(a);
   return li;
 };
 
-const createList = () => {
+const createList = (eventListner) => {
   const listWrapper = createElem('div', ['flex', 'justify-center', 'align-center']);
   const ul = createElem('ul', ['flex', 'flex-col', 'gap-y-16']);
   ['bg-pizza', 'bg-cake', 'bg-burger'].forEach((img, i) => {
-    const list = createListItem(img, i == 1 ? 'bg-gray-400' : '');
+    const list = createListItem(img, i == 1 ? 'bg-gray-400' : '', eventListner);
     ul.appendChild(list);
   });
   listWrapper.appendChild(ul);
@@ -88,11 +91,11 @@ const createSNFooter = () => {
   return sidenavFooterElem;
 };
  
-const createSidenav = () => {
+const createSidenav = (eventListner) => {
   const sideNavElem = createElem('aside', ['row-span-full','pt-8','p-12','top-0','box-border',
   'flex','flex-col','justify-between','sticky','h-screen','min-h-screen']);
   sideNavElem.appendChild(createSNHeading());
-  sideNavElem.appendChild(createList());
+  sideNavElem.appendChild(createList(eventListner));
   sideNavElem.appendChild(createSNFooter());
   return sideNavElem;
 };
@@ -113,4 +116,11 @@ const createHeader = () => {
   return header;
 };
 
-export { createHeader, createSidenav, createSelectedCategory, createCards };
+const clearContent = () => {
+  const content = document.getElementById('content');
+  while (content.firstChild) {
+    content.removeChild(content.firstChild);
+  }
+};
+
+export { createHeader, createSidenav, createSelectedCategory, createCards, clearContent };
