@@ -11,11 +11,10 @@ module.exports = {
         5: '5%',
       },
       minWidth: {
-        10: '2.5rem'
-      }
+        10: '2.5rem',
+      },
     },
   },
   variants: {},
   plugins: [],
-}
-
+};
