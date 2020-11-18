@@ -18,15 +18,16 @@
 
 > Follow these steps to set up and run the quickstart:
   - Clone/Download this repo and open this folder in a Terminal.
+    `git clone https://github.com/abredi/restaurant-page.git`
   - Install the Nodejs:
   [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
-  - Run npm instal on your terminal *be sure that you are in the project's directory*:
+  - Run npm install on your terminal *be sure that you are in the project's directory*:
   `npm i`
   - Finally run a local server:
   `npm run dev`
   - If you want to deploy the project run: `npm run build`
-  > Production ready build files will be generated in dist folder
+  > Production-ready build files will be generate in the dist folder.
 
 ### Live Demo
 
