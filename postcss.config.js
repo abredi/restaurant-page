@@ -14,7 +14,7 @@ if (envConf.getEnv() === envConf.ENV.PRODUCTION) {
   postCssPlugins = [
     ...postCssPlugins,
     require('@fullhuman/postcss-purgecss')({
-      content: ['./src/*.html', './src/design/**/*.js', './src/util/**/*.js'],
+      content: ['./src/*.html', './src/**/*.js'],
       defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
     }),
     require('cssnano')({
