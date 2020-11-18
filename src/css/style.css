@@ -1,0 +1,32 @@
+.grid-cols-2-auto {
+  grid-template-columns: 16em auto;
+}
+
+.bg-cake {
+  background-image: url('../assets/img/cake.svg');
+}
+
+.bg-burger {
+  background-image: url('../assets/img/hamburger.svg');
+}
+
+.bg-pizza {
+  background-image: url('../assets/img/pizza.svg');
+}
+
+.bg-setting {
+  background-image: url('../assets/img/setting.svg');
+}
+
+.h-min-10 {
+  min-width: 2.5em;
+}
+
+.w-min-10 {
+  min-height: 2.5em;
+}
+
+.grid-layout {
+  grid-template-rows: 7rem auto;
+  grid-template-columns: 10rem auto;
+}

@@ -1,0 +1,7 @@
+node_modules
+.history
+.vscode
+.DS_Store
+.idea
+src/cop.htm
+src/components.html
