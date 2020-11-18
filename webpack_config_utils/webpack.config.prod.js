@@ -18,6 +18,16 @@ module.exports = {
           use: ['css-loader', 'postcss-loader'],
         }),
       },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
     ],
   },
   plugins: [
@@ -29,7 +39,7 @@ module.exports = {
       },
     }),
     new CompressionPlugin({
-      filename: '[path].js[query]',
+      filename: '[path].br[query]',
       algorithm: 'brotliCompress',
       test: /\.(js|css|html|svg)$/,
       compressionOptions: {
@@ -41,7 +51,7 @@ module.exports = {
     }),
 
     new HtmlPlugin({
-      title: 'Todo App',
+      title: 'Restaurant App',
       template: `${appPath.ENTRY_SRC}/template.html`,
     }),
 
