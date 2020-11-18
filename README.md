@@ -30,7 +30,7 @@
 
 ### Live Demo
 
-[Click here](https://ewketbookclub.web.app)
+[Click here](https://abredi.github.io/restaurant-page/)
 
 ### Author
 
