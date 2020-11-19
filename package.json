@@ -5,9 +5,9 @@
   },
   "name": "restaurant",
   "version": "0.0.1",
-  "description": "A Todo app ",
-  "repository": "https://github.com/abredi/todoApp.git",
-  "author": "Abdulaziz Ali <rediabdulaziz@gmail.com> and Herve",
+  "description": "Restaurant website",
+  "repository": "https://github.com/abredi/restaurant-page.git",
+  "author": "Abdulaziz Ali <rediabdulaziz@gmail.com>",
   "license": "MIT",
   "private": "false",
   "devDependencies": {
