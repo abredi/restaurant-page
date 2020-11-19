@@ -20,7 +20,7 @@ const createElem = (elemName, classes = [], attrs = '', eventListner = null) => 
 };
 
 const createCard = (cont) => {
-  const cardElem = createElem('div', ['flex', 'flex-col', 'w-64', 'max-w-xs', 'p-4', 'm-2', 'gap-y-4']);
+  const cardElem = createElem('div', ['flex', 'flex-col', 'hover:shadow-md', 'w-64', 'max-w-xs', 'p-4', 'm-2', 'gap-y-4']);
   const cardPriceTagElem = createElem('span', ['flex', 'justify-end', 'text-teal-500']);
   const cardImgElem = createElem('img', ['self-center', 'w-20', 'h-20', 'bg-cover'],
     { src: cont.imgPath });
