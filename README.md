@@ -1,10 +1,10 @@
 ![Hireable](https://cdn.rawgit.com/hiendv/hireable/master/styles/default/yes.svg)
 
-  <h1 align="center">Rataurant Page</h1>
+  <h1 align="center">Restaurant Page</h1>
 
   <p align="center">
-    Beautiful tab-based webpages for the restaurant with clean web design.
-    In this project, I developed a restaurant webpage for practicing DOM manipulation by dynamically rendering HTML web pages.
+Here, I designed and implemented a clean and organized web page for the restaurants, with intuitive tab-based navigation for a better user experience.
+In this project, I developed a restaurant webpage for practicing DOM manipulation by dynamically rendering HTML web pages.
   </p>
 
 ### Built with
