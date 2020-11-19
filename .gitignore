@@ -5,3 +5,4 @@ node_modules
 .idea
 src/cop.htm
 src/components.html
+yarn-error.log

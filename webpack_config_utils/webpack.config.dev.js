@@ -22,7 +22,7 @@ module.exports = {
 
   plugins: [
     new HtmlPlugin({
-      title: 'Todo Application',
+      title: 'Restaurant',
       template: `${appPath.ENTRY_SRC}/template.html`,
     }),
   ],
